@@ -584,12 +584,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var elem;
+  var height = window.screen.height;
+  var row = height / s;
+  totalPizzas = cols * row; // Per Udacity review suggestion, totalPizzas calculates number of pizzas needed to fill the screen
 
   // Created var movingPizzas1, replaced document.querySelector to document.getElementById, and moved it out of the for-loop
   var movingPizzas = document.getElementById("movingPizzas1");
-
-  // Decrease number of pizzas to i < 50 
-  for (var i = 0; i < 50; i++) {
+  
+  for (var i = 0; i < totalPizzas; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
